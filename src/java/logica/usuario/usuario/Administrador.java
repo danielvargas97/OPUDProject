@@ -3,13 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package logica.usuario;
+package logica.usuario.usuario;
+
+import logica.usuario.mensajeria.BandejaEntrada;
 
 /**
  *
  * @author PC
  */
 public class Administrador extends Usuario {
+
+    public Administrador(BandejaEntrada bandeja) {
+        super(bandeja);
+    }
     
     @Override
     public void verMensaje() {
