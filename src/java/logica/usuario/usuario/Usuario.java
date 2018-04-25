@@ -20,6 +20,7 @@ public abstract class Usuario {
     
     public abstract void verMensaje();
     public abstract boolean iniciarSesion();
+    public abstract void redactarMensaje(Usuario destino,String asunto,String mensaje);
 
     public Usuario(BandejaEntrada bandeja){
         this.bandeja = bandeja;

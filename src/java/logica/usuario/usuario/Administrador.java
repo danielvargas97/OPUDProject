@@ -17,6 +17,11 @@ public class Administrador extends Usuario {
         super(bandeja);
     }
     
+    public void reportarUsuarioOPUD(UsuarioOPUD usuario){
+        //Mensaje m = new Mensaje();
+        
+    }
+    
     @Override
     public void verMensaje() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -24,6 +29,11 @@ public class Administrador extends Usuario {
 
     @Override
     public boolean iniciarSesion() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void redactarMensaje(Usuario destino, String asunto, String mensaje) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

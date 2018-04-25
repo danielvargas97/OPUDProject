@@ -5,16 +5,28 @@
  */
 package logica.usuario.mensajeria;
 
+import java.util.Date;
+import logica.usuario.usuario.Usuario;
+
 /**
  *
  * @author PC
  */
 public class Mensaje implements iMensaje {
+    private Usuario origen;
+    private Usuario destino;
     private String asunto;
     private String mensaje;
+    private Date fecha;
     
     public Mensaje(){
-        
+        this.fecha = new Date();
+    }
+    
+    public Mensaje(Usuario origen,Usuario destino){
+        this.origen = origen;
+        this.destino = destino;
+        this.fecha = new Date();
     }
 
     @Override

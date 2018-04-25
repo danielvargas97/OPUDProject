@@ -13,19 +13,27 @@ import logica.usuario.usuario.UsuarioOPUD;
  * @author PC
  */
 public class Calificador implements iCalificable {
+    public static final int NOTA_MINIMA = 0;
+    public static final int NOTA_MAXIMA = 50;
     private String idUsuario;
-    private int nota;
+    private int notaAcumulada;
     private int numeroCalificaciones;
     
-    public Calificador(String idUsuario){
-        this.idUsuario = idUsuario;
-        this.nota = 0;
+    public Calificador(){
+        this.notaAcumulada = 0;
         this.numeroCalificaciones = 0;
     }
     
+    public Calificador(String idUsuario){
+        this.idUsuario = idUsuario;
+        this.notaAcumulada = 0;
+        this.numeroCalificaciones = 0;
+    }
+    
+    
     public Calificador(String idUsuario,int nota,int numCalificacion){
         this.idUsuario = idUsuario;
-        this.nota = nota;
+        this.notaAcumulada = nota;
         this.numeroCalificaciones = numCalificacion;
     }
     
@@ -42,18 +50,24 @@ public class Calificador implements iCalificable {
     
     @Override
     public int verCalificacion() {
-        return nota;
+        try{
+            return notaAcumulada/numeroCalificaciones;
+        }
+        catch(Exception e){
+            e.printStackTrace();
+            return 0;
+        }
     }
     
     @Override
     public void asignarNota(int nota){
         numeroCalificaciones++;
-        this.nota = nota/numeroCalificaciones;
+        this.notaAcumulada = this.notaAcumulada+nota;
     }
     
     
     private boolean revisarNota(int nota){
-        return (nota<0 || nota>50);
+        return (nota>=NOTA_MINIMA && nota<=NOTA_MAXIMA);
     }
 
     public String getIdUsuario() {
@@ -64,12 +78,12 @@ public class Calificador implements iCalificable {
         this.idUsuario = idUsuario;
     }
 
-    public int getNota() {
-        return nota;
+    public int getNotaAcumulada() {
+        return notaAcumulada;
     }
 
-    public void setNota(int nota) {
-        this.nota = nota;
+    public void setNotaAcumulada(int nota) {
+        this.notaAcumulada = nota;
     }
 
     public int getNumeroCalificaciones() {

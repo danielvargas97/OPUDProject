@@ -27,6 +27,10 @@ public class UsuarioOPUD extends Usuario {
         calificacion.calificar(usuario, nota);
     }
     
+    public int verMiNota(){
+        return calificacion.verCalificacion();
+    }
+    
     @Override
     public void verMensaje() {
         BandejaEntrada miBandeja = super.getBandeja();
@@ -39,6 +43,11 @@ public class UsuarioOPUD extends Usuario {
         return false;
     }
 
+    @Override
+    public void redactarMensaje(Usuario destino, String asunto, String mensaje) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
     
     
     public String getRolUniversidad() {
@@ -64,6 +73,5 @@ public class UsuarioOPUD extends Usuario {
     public void setCalificacion(iCalificable calificacion) {
         this.calificacion = calificacion;
     }
-    
     
 }
