@@ -17,6 +17,7 @@ public abstract class Usuario {
     protected String docIdentidad;
     protected String correo;
     protected BandejaEntrada bandeja;
+    protected Contrasena contrasena;
     
     public abstract void verMensaje();
     public abstract boolean iniciarSesion();
@@ -24,6 +25,16 @@ public abstract class Usuario {
 
     public Usuario(BandejaEntrada bandeja){
         this.bandeja = bandeja;
+    }
+    
+    public void asignarContrasena(String nuevaContrasena){
+        try{
+            contrasena.setContrasena(nuevaContrasena);
+        }
+        catch(NullPointerException e){
+            e.printStackTrace();
+            contrasena = new Contrasena(nuevaContrasena);
+        }
     }
     
     public String getNombre() {
@@ -64,6 +75,15 @@ public abstract class Usuario {
 
     public void setBandeja(BandejaEntrada bandeja) {
         this.bandeja = bandeja;
-    }   
+    }
+
+    public Contrasena getContrasena() {
+        return contrasena;
+    }
+
+    public void setContrasena(Contrasena contrasena) {
+        this.contrasena = contrasena;
+    }
+    
     
 }
