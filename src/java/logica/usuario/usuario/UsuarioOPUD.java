@@ -32,9 +32,9 @@ public class UsuarioOPUD extends Usuario {
     }
     
     @Override
-    public void verMensaje() {
+    public void verMensaje(int index) {
         BandejaEntrada miBandeja = super.getBandeja();
-        miBandeja.verMensaje();
+        miBandeja.verMensaje(index);
         
     }
 

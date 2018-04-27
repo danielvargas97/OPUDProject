@@ -23,8 +23,9 @@ public class Administrador extends Usuario {
     }
     
     @Override
-    public void verMensaje() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void verMensaje(int index) {
+        BandejaEntrada buzon = super.getBandeja();
+        buzon.verMensaje(index);
     }
 
     @Override

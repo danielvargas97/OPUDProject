@@ -13,22 +13,38 @@ import java.util.ArrayList;
  */
 public class BandejaEntrada {
     private String idBandeja;
-    private ArrayList<Mensaje> buzon;
+    private ArrayList<Mensaje> buzonEntrada;
+    private ArrayList<Mensaje> buzonSalida;
+    
     
     public BandejaEntrada(){
-    
+        this.buzonEntrada = new ArrayList<>(); 
     }
     
-    public Mensaje verMensaje(){
-        return null;
+    public Mensaje verMensaje(int index){
+        return buzonEntrada.get(index);
     }
     
     public void crearMensaje(Mensaje nuevo){
-        buzon.add(nuevo);
+        buzonSalida.add(0, nuevo);
     }
     
     public void eliminarMensaje(Mensaje aBorrar){
-        buzon.remove(aBorrar);
+        buzonEntrada.remove(aBorrar);
     }
+
+    public String getIdBandeja() {
+        return idBandeja;
+    }
+
+    public ArrayList<Mensaje> getBuzonEntrada() {
+        return buzonEntrada;
+    }
+
+    public ArrayList<Mensaje> getBuzonSalida() {
+        return buzonSalida;
+    }
+    
+    
 }
 

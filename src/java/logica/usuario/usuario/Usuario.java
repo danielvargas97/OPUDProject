@@ -19,7 +19,7 @@ public abstract class Usuario {
     protected BandejaEntrada bandeja;
     protected Contrasena contrasena;
     
-    public abstract void verMensaje();
+    public abstract void verMensaje(int index);
     public abstract boolean iniciarSesion();
     public abstract void redactarMensaje(Usuario destino,String asunto,String mensaje);
 

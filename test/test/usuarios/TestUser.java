@@ -9,6 +9,7 @@ import java.util.Random;
 import logica.usuario.calificaciones.Calificador;
 import logica.usuario.calificaciones.iCalificable;
 import logica.usuario.mensajeria.BandejaEntrada;
+import logica.usuario.mensajeria.Mensaje;
 import logica.usuario.usuario.UsuarioOPUD;
 
 /**
@@ -41,6 +42,14 @@ public class TestUser {
         System.out.println(user_two.verMiNota());
         
         System.out.println("Probando Correo");
+        Mensaje nuevo = new Mensaje(user_one,user_two);
+        nuevo.setAsunto("Probando el Correo");
+        nuevo.setMensaje("Ipsum Lorem");
+        bandeja_x.crearMensaje(nuevo);
+        
+        Mensaje n = bandeja_x.verMensaje(0);
+        System.out.println(n.getAsunto());
+        System.out.println(n.getMensaje());
         
         
     }
