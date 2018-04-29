@@ -51,6 +51,11 @@ h2 {
   padding-bottom: 10px;
 }
 
+h2.black{
+  color: #000000;
+  padding-bottom: 10px; 
+}
+
 h3 {
   font-size: 1rem;
   line-height: 2rem;
@@ -92,8 +97,24 @@ tr{
   padding: 5px;
   text-align: center;
 }
+
+tr.dark{
+ color: #000000; 
+ padding: 5px;
+
+}
+
 td:hover{
   background-color: #f5f5f5;
+}
+
+td.dark{
+  font-size: 150%;
+}
+
+td.dark:hover{
+ background-color: #999999; 
+
 }
 th{
   font-size: 150%;
@@ -436,6 +457,15 @@ footer a:hover {
 .svgcolor-light > path {
   fill: white;
   stroke: white;
+  stroke-width: 0;
+}
+.svgcolor-yellow{
+  position: relative;
+  bottom: 104px; 
+}
+.svgcolor-yellow > path{
+  fill: #f1c11a;
+  stroke: #f1c11a;
   stroke-width: 0;
 }
 
