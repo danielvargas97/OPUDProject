@@ -6,49 +6,35 @@
 package logica.usuario.usuario;
 
 
-import logica.usuario.calificaciones.iCalificable;
-import logica.usuario.mensajeria.BandejaEntrada;
+import logica.usuario.calificacion.iCalificacion;
+import logica.usuario.calificador.iCalificable;
 
 /**
  *
  * @author PC
  */
-public class UsuarioOPUD extends Usuario {
+public class UsuarioOPUD {
+    private Usuario usuario;
     private String rolUniversidad;
     private String codigo;
-    private iCalificable calificacion;
+    private iCalificable calificador;
+    private iCalificacion calificacion; 
+            
+            
     
-    public UsuarioOPUD(BandejaEntrada bandeja,iCalificable calificacion){
-        super(bandeja);
-        this.calificacion = calificacion;
+    public UsuarioOPUD(Usuario usuario,iCalificacion calificacion){
+    	this.calificacion = calificacion;
+    	this.calificacion.asignarCalificado(usuario.getIdUser());
+        this.usuario = usuario;
     }
     
-    public void calificar(UsuarioOPUD usuario, int nota){
-        calificacion.calificar(usuario, nota);
+    public void calificarUsuario(int nota) {
+    	calificador.calificar(nota);
     }
     
-    public int verMiNota(){
-        return calificacion.verCalificacion();
+    public int verMiCalificacion() {
+    	return calificacion.verCalificacion();
     }
-    
-    @Override
-    public void verMensaje(int index) {
-        BandejaEntrada miBandeja = super.getBandeja();
-        miBandeja.verMensaje(index);
-        
-    }
-
-    @Override
-    public boolean iniciarSesion() {
-        return false;
-    }
-
-    @Override
-    public void redactarMensaje(Usuario destino, String asunto, String mensaje) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
-    
     
     public String getRolUniversidad() {
         return rolUniversidad;
@@ -65,13 +51,9 @@ public class UsuarioOPUD extends Usuario {
     public void setCodigo(String codigo) {
         this.codigo = codigo;
     }
-
-    public iCalificable getCalificacion() {
-        return calificacion;
-    }
-
-    public void setCalificacion(iCalificable calificacion) {
-        this.calificacion = calificacion;
-    }
     
+    
+    public void asignarCalificador(iCalificable calificador, String calificante, String calificado) {
+    	this.calificador = calificador;
+    }
 }

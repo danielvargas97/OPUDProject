@@ -6,8 +6,8 @@
 package test.usuarios;
 
 import java.util.Random;
-import logica.usuario.calificaciones.Calificador;
-import logica.usuario.calificaciones.iCalificable;
+import logica.usuario.calificador.Calificador;
+import logica.usuario.calificador.iCalificable;
 import logica.usuario.mensajeria.BandejaEntrada;
 import logica.usuario.mensajeria.Mensaje;
 import logica.usuario.usuario.UsuarioOPUD;

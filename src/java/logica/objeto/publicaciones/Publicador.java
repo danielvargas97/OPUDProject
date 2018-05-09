@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package logica.objetos.publicaciones;
+package logica.objeto.publicaciones;
 
 import java.util.Date;
 

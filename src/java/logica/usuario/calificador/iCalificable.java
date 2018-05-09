@@ -3,17 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package logica.usuario.usuario;
+package logica.usuario.calificador;
 
 /**
  *
  * @author PC
  */
-public class Administrador {
-    private Usuario usuario;
-        
-    public Administrador(Usuario usuario) {
-        this.usuario = usuario;
-    }
-    
+public interface iCalificable {
+    public boolean calificar(int nota);
 }

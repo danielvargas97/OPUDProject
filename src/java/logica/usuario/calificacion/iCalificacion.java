@@ -3,16 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package logica.usuario.calificaciones;
-
-import logica.usuario.usuario.UsuarioOPUD;
+package logica.usuario.calificacion;
 
 /**
  *
  * @author PC
  */
-public interface iCalificable {
-    public boolean calificar(UsuarioOPUD usuario, int nota);
+public interface iCalificacion {
+    public void asignarCalificado(String idUser);
     public int verCalificacion();
-    public void asignarNota(int nota);
 }

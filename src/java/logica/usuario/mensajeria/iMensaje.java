@@ -5,11 +5,15 @@
  */
 package logica.usuario.mensajeria;
 
+import java.util.List;
+
 /**
  *
  * @author PC
  */
 public interface iMensaje {
-    public void redactar();
-    public Mensaje verMensaje();
+    public void redactar(String origen, String destino,String asunto, String mensaje);
+    public List<String> verMensaje(int index);
+    public void asignarOrigen(String idUser);
+    
 }

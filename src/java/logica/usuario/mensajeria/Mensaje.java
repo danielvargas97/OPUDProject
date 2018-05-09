@@ -6,15 +6,14 @@
 package logica.usuario.mensajeria;
 
 import java.util.Date;
-import logica.usuario.usuario.Usuario;
 
 /**
  *
  * @author PC
  */
-public class Mensaje implements iMensaje {
-    private Usuario origen;
-    private Usuario destino;
+public class Mensaje{
+    private String origen;
+    private String destino;
     private String asunto;
     private String mensaje;
     private boolean leido;
@@ -25,36 +24,26 @@ public class Mensaje implements iMensaje {
         this.leido = false;
     }
     
-    public Mensaje(Usuario origen,Usuario destino){
+    public Mensaje(String origen,String destino){
         this.origen = origen;
         this.destino = destino;
         this.fecha = new Date();
         this.leido = false;
     }
-
-    @Override
-    public void redactar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public Mensaje verMensaje() {
-        return this;
-    }
-
-    public Usuario getOrigen() {
+    
+    public String getOrigen() {
         return origen;
     }
 
-    public void setOrigen(Usuario origen) {
+    public void setOrigen(String origen) {
         this.origen = origen;
     }
 
-    public Usuario getDestino() {
+    public String getDestino() {
         return destino;
     }
 
-    public void setDestino(Usuario destino) {
+    public void setDestino(String destino) {
         this.destino = destino;
     }
 

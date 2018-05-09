@@ -5,27 +5,49 @@
  */
 package logica.usuario.usuario;
 
-import logica.usuario.mensajeria.BandejaEntrada;
+import java.util.List;
+
+import logica.usuario.mensajeria.iMensaje;
 
 /**
  *
  * @author PC
  */
 public abstract class Usuario {
-    protected String nombre;
-    protected String apellido;
-    protected String docIdentidad;
-    protected String correo;
-    protected BandejaEntrada bandeja;
-    protected Contrasena contrasena;
-    
-    public abstract void verMensaje(int index);
-    public abstract boolean iniciarSesion();
-    public abstract void redactarMensaje(Usuario destino,String asunto,String mensaje);
+    private String nombre;
+    private String apellido;
+    private String docIdentidad;
+    private String correo;
+    private String idUser;
 
-    public Usuario(BandejaEntrada bandeja){
-        this.bandeja = bandeja;
+    private iMensaje mensajeria;
+    private Contrasena contrasena;
+ 
+    
+    public Usuario() {
+    	
     }
+    
+
+    public Usuario(iMensaje mensajeria){
+        this.mensajeria = mensajeria;
+    }
+    
+    public Usuario(iMensaje mensajeria,Contrasena contrasena) {
+    	this.mensajeria = mensajeria;
+    	this.contrasena = contrasena;
+    }
+    
+    
+    public List<String> verMensaje(int index) {
+    	return mensajeria.verMensaje(index);
+    }
+    
+    public void redactarMensaje(String destino,String asunto,String mensaje) {
+    	mensajeria.redactar(idUser, destino, asunto, mensaje);
+    	
+    }
+
     
     public void asignarContrasena(String nuevaContrasena){
         try{
@@ -69,14 +91,6 @@ public abstract class Usuario {
         this.correo = correo;
     }
 
-    public BandejaEntrada getBandeja() {
-        return bandeja;
-    }
-
-    public void setBandeja(BandejaEntrada bandeja) {
-        this.bandeja = bandeja;
-    }
-
     public Contrasena getContrasena() {
         return contrasena;
     }
@@ -85,5 +99,8 @@ public abstract class Usuario {
         this.contrasena = contrasena;
     }
     
+    public String getIdUser(){
+    	return this.idUser;
+    }
     
 }
